@@ -16,10 +16,21 @@
     <Filter Include="Source Files\Dynamic Connectivity">
       <UniqueIdentifier>{72562029-a1ab-4b1a-8b01-b6d254517137}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Dynamic Connectivity">
+      <UniqueIdentifier>{f909644a-bf08-4c78-9701-8062c1d9ffa1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Test.cpp">
       <Filter>Source Files\Dynamic Connectivity</Filter>
     </ClCompile>
+    <ClCompile Include="QuickFindUF.cpp">
+      <Filter>Source Files\Dynamic Connectivity</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="QuickFindUF.h">
+      <Filter>Header Files\Dynamic Connectivity</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
