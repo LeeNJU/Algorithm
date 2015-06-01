@@ -19,13 +19,19 @@
     <Filter Include="Header Files\Dynamic Connectivity">
       <UniqueIdentifier>{f909644a-bf08-4c78-9701-8062c1d9ffa1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Sort">
+      <UniqueIdentifier>{95f11b8e-e463-4c44-8863-967dc21152d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Test.cpp">
-      <Filter>Source Files\Dynamic Connectivity</Filter>
-    </ClCompile>
     <ClCompile Include="QuickFindUF.cpp">
       <Filter>Source Files\Dynamic Connectivity</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap Sort.cpp">
+      <Filter>Source Files\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
