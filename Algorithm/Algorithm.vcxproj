@@ -78,6 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bucket_Sort.cpp" />
     <ClCompile Include="Counting_Sort.cpp" />
     <ClCompile Include="Heap Sort.cpp" />
     <ClCompile Include="Merge Sort.cpp" />
