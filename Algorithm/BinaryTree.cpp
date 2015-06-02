@@ -3,9 +3,9 @@ template <typename T>
 class BinaryTree
 {
 private:
-	TreeNode* root;
+	TreeNode<T>* root;
 public:
-	int depth()
+	void insert(TreeNode<T>& v)
 	{
 
 	}
