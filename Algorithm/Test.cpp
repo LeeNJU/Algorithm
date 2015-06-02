@@ -2,13 +2,13 @@
 
 using namespace std;
 
-void QuickSort(int A [], int p, int r);
+void MergeSort(int A[], int p, int r);
 
 int main()
 {
-	int A [] = { 2,8,7,1,3,5,6,4};
-	QuickSort(A, 0, 7);
-	for (int i = 0; i < 8; ++i)
+	int A [] = { 2,8,7,1,3,5,6,4,10, -3};
+	MergeSort(A, 0, 9);
+	for (int i = 0; i < 10; ++i)
 		std::cout << A[i] << " ";
 	std::cout << std::endl;
 	return 0;

@@ -36,6 +36,9 @@
     <ClCompile Include="QuickSort.cpp">
       <Filter>Source Files\Sort</Filter>
     </ClCompile>
+    <ClCompile Include="Merge Sort.cpp">
+      <Filter>Source Files\Sort</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuickFindUF.h">
