@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClCompile Include="Heap Sort.cpp" />
     <ClCompile Include="QuickFindUF.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
