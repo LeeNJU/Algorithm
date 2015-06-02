@@ -22,6 +22,15 @@
     <Filter Include="Source Files\Sort">
       <UniqueIdentifier>{95f11b8e-e463-4c44-8863-967dc21152d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\HashTable">
+      <UniqueIdentifier>{cba48c74-bdb2-4455-a48f-b68fc5c26792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tree">
+      <UniqueIdentifier>{56f00179-925e-466b-a7c0-0493608582f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tree">
+      <UniqueIdentifier>{72f97db4-1a1b-4767-b1de-91b3ca579985}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="QuickFindUF.cpp">
@@ -45,10 +54,16 @@
     <ClCompile Include="Bucket_Sort.cpp">
       <Filter>Source Files\Sort</Filter>
     </ClCompile>
+    <ClCompile Include="BinaryTree.cpp">
+      <Filter>Source Files\Tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuickFindUF.h">
       <Filter>Header Files\Dynamic Connectivity</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>Header Files\Tree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
