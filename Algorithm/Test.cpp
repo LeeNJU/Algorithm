@@ -2,14 +2,15 @@
 
 using namespace std;
 
-void MergeSort(int A[], int p, int r);
+void Counting_Sort(int A[], int B[], int k, int n);
 
 int main()
 {
-	int A [] = { 2,8,7,1,3,5,6,4,10, -3};
-	MergeSort(A, 0, 9);
-	for (int i = 0; i < 10; ++i)
-		std::cout << A[i] << " ";
+	int A [] = { 20, 8, 7, 7, 3, 5, 6, 4, 10, 15, 2};
+	int B [] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+	Counting_Sort(A, B, 20, 11);
+	for (int i = 0; i < 11; ++i)
+		std::cout << B[i] << " ";
 	std::cout << std::endl;
 	return 0;
 }
