@@ -104,12 +104,12 @@ public:
 		if (prev == nullptr)//空树直接插入
 			root = node
 		else if (prev->val < node->val)//判断该插入左子节点还是右子节点
-		prev->right = node;
+		    prev->right = node;
 		else
 			prev->left = node;
 	}
 
-	void deleteNode(TreeNode<T>* node)//删除操作，分三种情况，1.node是页节点，没有子节点，直接删除。2.node只有左子节点或只有右子节点，把相应的左子节点或
+	void remove(TreeNode<T>* node)//删除操作，分三种情况，1.node是页节点，没有子节点，直接删除。2.node只有左子节点或只有右子节点，把相应的左子节点或
 	{                             //右子节点连接到父节点，然后删除node节点。3.node有左子节点和右子节点，找到node左子树中的最大元素（或右子树的最小元素）
 		//与node交换，然后删除找到的最大元素或最小元素
 		TreeNode<T>* temp = node;
@@ -167,12 +167,15 @@ public:
 	{
 		std::stack<TreeNode<T>*> s;
 		TreeNode<T>* p = root;
-		while (!s.empty() || p != nullptr) {
-			if (p != nullptr) {//把从根节点开始一直到最左边的节点上的所有节点压入栈中
+		while (!s.empty() || p != nullptr) 
+		{
+			if (p != nullptr) //把从根节点开始一直到最左边的节点上的所有节点压入栈中
+			{
 				s.push(p);
 				p = p->left;
 			}
-			else {//当p为nullptr时，弹出栈顶元素，然后把右子树的左子节点全部压入栈中
+			else //当p为nullptr时，弹出栈顶元素，然后把右子树的左子节点全部压入栈中
+			{
 				p = s.top();
 				s.pop();
 				visit(p);
