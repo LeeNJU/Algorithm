@@ -14,7 +14,7 @@ class TrieNode//根节点必须为空
 private:
 	char content;
 	bool isEndOfWord;//表示当前是否是一个字符串的结尾
-	std::unordered_map<char, TrieNode*> nexts;//保存所有子节点
+	std::unordered_map<char, TrieNode*> nexts;//保存所有子节点的指针
 
 public:
 	TrieNode()

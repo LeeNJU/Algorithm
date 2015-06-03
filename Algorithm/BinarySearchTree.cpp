@@ -184,11 +184,32 @@ public:
 
 	void iterativePostorder()//非递归版后序遍历
 	{
-
-	}
-
-	void iterativeLevelorder()//非递归版层次遍历
-	{
-
+		TreeNode<T>*p, *q;/* p，正在访问的结点，q，刚刚访问过的结点*/
+		stack<TreeNode<T>*> s;
+		p = root;
+		do {
+			while (p != nullptr) /* 往左下走*/
+			{ 
+				s.push(p);
+				p = p->left;
+			}
+			q = nullptr;
+			while (!s.empty()) 
+			{
+				p = s.top();
+				s.pop();
+				if (p->right == q) /* 右孩子不存在或已被访问，访问之*/
+				{
+					visit(p);
+					q = p; /* 保存刚访问过的结点*/
+				}
+				else 
+				{
+					s.push(p);/* 当前结点不能访问，需第二次进栈*/
+					p = p->right;/* 先处理右子树*/
+					break;
+				}
+			}
+		} while (!s.empty());
 	}
 };
