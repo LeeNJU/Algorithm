@@ -1,5 +1,6 @@
 #include"Tree.h"
 #include<stack>
+#include<queue>
 template <typename T>
 class BinarySearchTree
 {
@@ -16,7 +17,7 @@ protected:
 		while (p != nullptr)
 		{
 			if (p->val == node->val)//找到
-				return p->val;
+				return p;
 			else if (p->val < node->val)//在右子树
 				p = p->right;
 			else//在左子树
@@ -52,6 +53,24 @@ protected:
 			postorder(p->left);
 			postorder(p->right);
 			visit(p);
+		}
+	}
+
+	void levelorder(const TreeNode<T>* p)//层次遍历
+	{                                    //用一个队列保存节点，先把根节点压入队列中，再依次加入左右子节点，直到队列为空
+		if (p == nullptr)
+			return;
+
+		std::queue<TreeNode<T>*> q;
+		q.push(p);
+		while (!q.empty())
+		{
+			visit(p);
+			q.pop();//弹出该元素
+			if (p->left)//加入左子节点
+				q.push(p->left);
+			if (p->right)//加入右子节点
+				q.push(p->right);
 		}
 	}
 
@@ -122,7 +141,7 @@ public:
 
 	void levelorder()//层次遍历
 	{
-
+		levelorder(root);
 	}
 
 	void iterativePreorder()//非递归版前序遍历
