@@ -54,7 +54,7 @@
     <ClCompile Include="Bucket_Sort.cpp">
       <Filter>Source Files\Sort</Filter>
     </ClCompile>
-    <ClCompile Include="BinaryTree.cpp">
+    <ClCompile Include="BinarySearchTree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
   </ItemGroup>
