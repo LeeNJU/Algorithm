@@ -9,6 +9,16 @@ struct TreeNode
 };
 
 
+template <typename T>
+struct AVLNode
+{
+	T val;
+	AVLNode* left;
+	AVLNode* right;
+	int height;
+	AVLNode(T x) : val(x), left(nullptr), right(nullptr),height(0){}
+};
+
 class TrieNode//根节点必须为空
 {
 private:

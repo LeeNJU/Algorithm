@@ -78,7 +78,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AVL_Tree.cpp" />
     <ClCompile Include="BinarySearchTree.cpp" />
+    <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="Bucket_Sort.cpp" />
     <ClCompile Include="Counting_Sort.cpp" />
     <ClCompile Include="Heap Sort.cpp" />
