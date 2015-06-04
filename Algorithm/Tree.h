@@ -5,7 +5,7 @@ struct TreeNode
 	T val;
 	TreeNode* left;
 	TreeNode* right;
-	TreeNode(T x) : val(x), left(nullptr), right(nullptr){}
+	TreeNode(const T& x) : val(x), left(nullptr), right(nullptr){}
 };
 
 
@@ -16,7 +16,17 @@ struct AVLNode
 	AVLNode* left;
 	AVLNode* right;
 	int height;
-	AVLNode(T x) : val(x), left(nullptr), right(nullptr),height(0){}
+	AVLNode(const T& x) : val(x), left(nullptr), right(nullptr),height(0){}
+};
+
+template <typename T>
+struct RedBlackNode
+{
+	T val;
+	RedBlackNode* left;
+	RedBlackNode* right;
+	int color; //表明节点红黑属性，0代表红，1代表黑，默认为黑
+	RedBlackNode(const T& v) :val(v), left(nullptr), right(nullptr), color(1){}
 };
 
 class TrieNode//根节点必须为空

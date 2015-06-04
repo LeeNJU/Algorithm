@@ -87,6 +87,7 @@
     <ClCompile Include="Merge Sort.cpp" />
     <ClCompile Include="QuickFindUF.cpp" />
     <ClCompile Include="QuickSort.cpp" />
+    <ClCompile Include="RedBlackTree.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Trie_Tree.cpp" />
   </ItemGroup>

@@ -122,7 +122,11 @@ private:
 			t->right = remove(t->right, p);//然后再去删除找到的最小点
 		}
 		else//找到了该节点，但是该节点可能没有子节点，可能只有一个子节点
+		{
+			AVLNode* temp = t;
 			t = t->left == nullptr ? t->right : t->left;
+			delete temp;
+		}
 		return balance(t);
 	}
 public:
