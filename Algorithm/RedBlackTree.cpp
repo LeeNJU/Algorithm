@@ -15,6 +15,7 @@ private:
 		x->right = y->left;
 		if (y->left != nullptr)//设置父节点
 			y->left->parent = x;
+		y->parent = x->parent;
 
 		if (x == root) //x为根节点
 			root = y;
@@ -27,9 +28,22 @@ private:
 		x->parent = y;
 	}
 
-	RedBlackNode* right_rotate(RedBlackNode* t)//右单旋
+	RedBlackNode* right_rotate(RedBlackNode* x)//从左往右单旋
 	{
-		RedBlackNode* y = t->right;
-		t->right = y->left
+		RedBlackNode* y = x->left;
+		x->left = y->right;
+		if (y->right != nullptr)//设置父节点
+			y->right->parent = x;
+		y->parent = x->parent;
+
+		if (x == root)
+			root = y;
+		else if (x == x->parent->right)
+			x->parent->right = y;
+		else
+			x->parent->left = y;
+
+		y->right = x;
+		x->parent = y;
 	}
 };
