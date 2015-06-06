@@ -20,13 +20,14 @@ struct AVLNode
 };
 
 template <typename T>
-struct RedBlackNode
+struct RedBlackNode//RBTree的节点必须要知道父节点
 {
 	T val;
+	RedBlackNode* parent;
 	RedBlackNode* left;
 	RedBlackNode* right;
-	int color; //表明节点红黑属性，0代表红，1代表黑，默认为黑
-	RedBlackNode(const T& v) :val(v), left(nullptr), right(nullptr), color(1){}
+	int color; //表明节点红黑属性，0代表红，1代表黑，默认为红
+	RedBlackNode(const T& v, RedBlackNode* p = nullptr, RedBlackNode* l = nullptr, RedBlackNode* r = nullptr, int c = 0) :val(v), parent(p),left(l), right(r), color(c){}
 };
 
 class TrieNode//根节点必须为空
