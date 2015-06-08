@@ -6,7 +6,11 @@ class BinaryTree
 {
 private:
 	TreeNode<T>* root;
-public:
+
+	void visit(const TreeNode<T>* p)//访问某一个节点
+	{
+
+	}
 	void preorder(const TreeNode<T>* p)//递归版前序遍历
 	{
 		if (p != nullptr)
@@ -54,6 +58,40 @@ public:
 				q.push(p->right);
 		}
 	}
+
+//morris遍历,使用二叉树的叶子节点的右指针指向后继点，当访问完成之后，再把叶子节点的右指针设为nullptr，有些节点会被访问两次
+	void morris_inorder(TreeNode<T>* t)
+	{
+		TreeNode<T>* p = t, *temp = nullptr;
+		while (p) 
+		{
+			if (p->left == nullptr) //左子树不存在，访问下一个点
+			{
+				visit(p);
+				p = p->right;
+			}
+			else //左子树存在，找到左子树的最右子节点，把它的right指针指向p，即后继点
+			{
+				temp = p->left; 
+				while (temp->right != nullptr && temp->right != p) //循环终止条件为temp的right不能指向p
+					temp = temp->right;
+				
+				if (temp->right == nullptr) //right指向p，继续访问p的左子树
+				{
+					temp->right = p;
+					p = p->left;
+				}
+				else 
+				{
+					visit(p);
+					temp->right = nullptr;
+					p = p->right;
+				}
+			}
+		}
+	}
+public:
+	
 
 	//二叉树的遍历
 	void preorder()//前序遍历
