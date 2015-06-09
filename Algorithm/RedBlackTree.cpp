@@ -114,7 +114,45 @@ private:
 
 	void rebalance_for_remove(RedBlackNode<T>* r, RedBlackNode<T>* x)
 	{
+		while (x != r && x->color == 1)//x不为根节点且x为黑色
+		{
+			if (x == x->parent->left)//x为父节点的左子节点
+			{
+				RedBlackNode<T>* w = x->parent->right;//w为兄弟节点
+				if (w && w->color == 0)//兄弟节点存在且为红色
+				{
+					w->color = 1; //兄弟节点设为黑色
+					x->parent->color = 0;//父节点设为红色
+					left_rotate(x->parent);
+					w = x->parent->right;
+				}
+				if (w && w->left && w->right && w->left->color == 1 && w->right->color == 1)//w的左右子节点都是黑色
+				{
+					w->color = 0;
+					x = x->parent;
+				}
+				else
+				{
+					if (w->right->color == 1)
+					{
+						w->left->color = 1;
+						w->color = 0;
+						right_rotate(w);
+						w = x->parent->right;
+					}
+					w->color = x->parent->color;
+					x->parent->color = 1;
+					w->right->color = 1;
+					left_rotate(x->parent);
+					x = this->root;
+				}
+			}
+			else//类似，把right换成left就可以
+			{
 
+			}
+		}
+		x->color = 1;
 	}
 
 public:
