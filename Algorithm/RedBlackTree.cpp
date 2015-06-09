@@ -8,7 +8,7 @@ class RedBlackTree
 {
 private:
 	RedBlackNode<T>* root;
-	RedBlackNode<T> dummy;//哨兵节点，RBTree中所有指向nullptr的指针都改成指向哨兵节点
+	RedBlackNode<T> dummy;//哨兵节点，RBTree中所有指向nullptr的指针都改成指向哨兵节点，颜色为黑色
 
 	void left_rotate(RedBlackNode* x)//从右往左单旋
 	{
@@ -61,7 +61,7 @@ private:
 					x->parent->color = 1;//把父节点和伯父节点设为黑色
 					y->color = 1;
 					x->parent->parent->color = 0;//把祖父节点设为红色
-					x = x->parent->parent;
+					x = x->parent->parent; //从下往上进行检查
 				}
 				else  //伯父节点不存在，或者伯父节点为黑色
 				{
@@ -123,20 +123,20 @@ public:
 				x = x->left;
 			else
 				x = x->right;
-
-			z->parent = y;
-			if (y == &dummy)
-				root = z;
-			else if (z->val < y->val)
-				y->left = z;
-			else
-				y->right = z;
-
-			z->left = &dummy;
-			z->right = &dummy;
-			z->color = 0;//颜色设为红色
-
-			rebalance_for_insert(z);
 		}
+
+		z->parent = y;
+		if (y == &dummy)//空树，直接插入
+			root = z;
+		else if (z->val < y->val)
+			y->left = z;
+		else
+			y->right = z;
+
+		z->left = &dummy;
+		z->right = &dummy;
+		z->color = 0;//颜色设为红色
+
+		rebalance_for_insert(z);
 	}
 };

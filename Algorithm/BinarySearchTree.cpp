@@ -38,10 +38,13 @@ public:
 		return root == nullptr;
 	}
 
+
 	TreeNode<T>* search(const TreeNode<T>* node) const//查找操作
 	{
 		return search(root, node);
 	}
+
+	
 
 	void insert(const TreeNode<T>* node)//插入操作，用两个指针遍历整课树，p指向根节点，prev指向p节点的父节点，刚开始时prev为nullptr,两个指针逐层下降遍历二叉树
 	{                        //多用prev指针，是为了当p为nullptr，找到插入位置的时候，这时prev指向父节点，方便插入
