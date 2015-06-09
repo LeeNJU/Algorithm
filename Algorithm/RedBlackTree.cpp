@@ -48,6 +48,17 @@ private:
 		x->parent = y;
 	}
 
+	void RB_Transplant(RedBlackNode<T>* r, RedBlackNode<T>* u, RedBlackNode<T>* v)//该方法把以u为根节点的子树替换成以v为根节点的子树
+	{                           //代码里未考虑u和v为null的情况，要注意
+		if (u->parent == &dummy)
+			this->root = v;
+		else if (u == u->parent->left)
+			u->parent->left = v;
+		else
+			u->parent->right = v;
+		v->parent = u->parent;
+	}
+
 	void rebalance_for_insert(RedBlackNode<T>* x)//执行插入或删除操作后，RBTree可能不满足条件，因此需要重新调整
 	{
 		x->color = 0; //x的颜色必须是红色
@@ -101,6 +112,11 @@ private:
 		root->color = 1;//根节点永远为黑
 	}
 
+	void rebalance_for_remove(RedBlackNode<T>* r, RedBlackNode<T>* x)
+	{
+
+	}
+
 public:
 	RedBlackTree()
 	{
@@ -109,6 +125,17 @@ public:
 		dummy.right = nullptr;
 		dummy.parent = nullptr;
 	}
+
+	RedBlackNode* minimum(RedBlackNode* t)//找到最小节点
+	{
+		if (t == nullptr)
+			return t;
+
+		while (t->left != null)//找到最左边的节点，即为最小点
+			t = t->left;
+		return t;
+	}
+
 	void insert(const RedBlackNode<T>* z)
 	{
 		if (z == nullptr)
@@ -138,5 +165,42 @@ public:
 		z->color = 0;//颜色设为红色
 
 		rebalance_for_insert(z);
+	}
+
+	void remove(RedBlackNode<T>* z)
+	{
+		RedBlackNode<T>* y = z;
+		RedBlackNode<T>* x;
+		int y_original_color = y->color;
+		if (z->left == &dummy)//左子节点为空，或者左右子节点为空，直接删除
+		{
+			RedBlackNode<T>* x = z->right;
+			RB_Transplant(this->root, z, z->right);
+		}
+		else if (z->right == &dummy)//右子节点为空，直接删除
+		{
+			x = z->left;
+			RB_Transplant(this->root, z, z->left);
+		}
+		else //左右子节点均不为空
+		{
+			RedBlackNode<T>* y = minimum(z->right);//找到右子树最小节点
+			y_original_color = y->color;
+			x = y->right;
+			if (y->parent == z)//这里应该考虑x为null的情况
+				x->parent = y;
+			else
+			{
+				RB_Transplant(this->root, y, y->right);
+				y->right = z->right;
+				y->right->parent = y;
+			}
+			RB_Transplant(this->root, z, y);
+			y->left = z->left;
+			y->left->parent = y;
+			y->color = z->color;
+		}
+		if (y_original_color == 1)
+			rebalance_for_remove(this->root, x);
 	}
 };

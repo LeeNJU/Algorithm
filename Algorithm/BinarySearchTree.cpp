@@ -6,11 +6,12 @@ class BinarySearchTree
 {
 private:
 	TreeNode<T>* root;
-protected:
+
 	void visit(const TreeNode<T>* p)//访问某一个节点
 	{
 
 	}
+
 
 	TreeNode<T>* search(TreeNode<T>* p, const TreeNode<T>* node)//二叉查找树的查找操作
 	{
