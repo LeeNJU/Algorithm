@@ -60,6 +60,37 @@ private:
 	}
 
 //morris遍历,使用二叉树的叶子节点的右指针指向后继点，当访问完成之后，再把叶子节点的右指针设为nullptr，有些节点会被访问两次
+	void morris_preorder(TreeNode<T>* t)
+	{
+		TreeNode<T>* p = t, *temp = nullptr;
+		while (p) 
+		{
+			if (p->left == nullptr) 
+			{
+				visit(p);
+				p = p->right;
+			}
+			else 
+			{
+				temp = p->left;
+				while (temp->right != nullptr && temp->right != p) 
+					temp = temp->right;
+				
+				if (temp->right == nullptr) 
+				{
+					visit(p);
+					temp->right = p;
+					p = p->left;
+				}
+				else 
+				{
+					temp->right = nullptr;
+					p = p->right;
+				}
+			}
+		}
+	}
+
 	void morris_inorder(TreeNode<T>* t)
 	{
 		TreeNode<T>* p = t, *temp = nullptr;
@@ -89,6 +120,40 @@ private:
 				}
 			}
 		}
+	}
+
+	void morris_postorder(TreeNode<T>* t)//morris后序遍历
+	{
+		TreeNode<T>* dump = new TreeNode<T>(0);
+		TreeNode<T>* p = t, *temp = nullptr;
+		dump->left = t;
+		p = dump;
+		while (p) 
+		{
+			if (p->left == nullptr) 
+			{
+				p = p->right;
+			}
+			else 
+			{
+				temp = p->left;
+				while (temp->right != nullptr && temp->right != p) 
+					temp = temp->right;
+				
+				if (temp->right == nullptr) 
+				{
+					temp->right = p;
+					p = p->left;
+				}
+				else 
+				{
+					//printReverse(p->left, temp);
+					temp->right = nullptr;
+					p = p->right;
+				}
+			}
+		}
+		delete dump;
 	}
 public:
 	
