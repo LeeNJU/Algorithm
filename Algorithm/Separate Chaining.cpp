@@ -9,7 +9,7 @@ class HashTable
 {
 private:
 	std::vector<std::list<T>> theLists;   // The array of Lists
-	int  currentSize;
+	int  currentSize; //当前hashtable中的元素个数
 
 	int nextPrime(int n)//返回一个比n大的质数
 	{
@@ -71,7 +71,7 @@ private:
 		}
 	}
 
-	int myhash(const T & x) const
+	int myhash(const T& x) const
 	{
 		int hashVal = hash(x);
 
@@ -90,7 +90,7 @@ public:
 
 	bool contains(const T & x) const//判断是否包含某个元素x
 	{
-		const std::list<T> & whichList = theLists[myhash(x)];
+		const std::list<T>& whichList = theLists[myhash(x)];
 		return find(whichList.begin(), whichList.end(), x) != whichList.end();
 	}
 
