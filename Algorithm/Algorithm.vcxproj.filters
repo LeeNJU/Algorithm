@@ -69,6 +69,9 @@
     <ClCompile Include="RedBlackTree.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
+    <ClCompile Include="Separate Chaining.cpp">
+      <Filter>Source Files\HashTable</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuickFindUF.h">
