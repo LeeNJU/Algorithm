@@ -14,7 +14,7 @@ private:
 	std::vector<V> vertices; //点的集合
 	void dfs(const V& v, std::unordered_map<V, bool>& marked )
 	{
-		marked[v] = true;
+		marked[v] = true; //设为true表示已经被遍历过了
 		for (V vertex : v.adjacentVertex())
 		{
 			if (!marked[vertex])
@@ -25,7 +25,20 @@ public:
 	Graph(){}
 	void depth_first_search(const V& v) //图的深度优先遍历，求出点v所有可达的点
 	{
-		std::unordered_map<V, bool> marked(vertices.size(), false);
+		std::unordered_map<V, bool> marked(vertices.size(), false); //该数组表示每个点是否被遍历过
 		dfs(v, marked);
+	}
+
+	void topoSort()//拓扑排序，先找到一个入度为0的点，访问该点，然后把该点以及这点的出边全部删除
+	{
+		std::unordered_map<V, int> indegree;
+		for (int i = 0; i < vertices.size(); ++i)//计算每个点的入度
+		{
+			std::list<V> li = vertices[i].adjacentVertex();
+			for (int j = 0; j < li.size(); ++j)
+				++indegree[li[j]];
+		}
+
+
 	}
 };
