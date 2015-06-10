@@ -67,3 +67,60 @@ public:
 		return isEndOfWord;
 	}
 };
+
+template <typename T>
+class Vertex
+{
+private:
+	T value;
+	int weight;
+	std::list<Vertex<T>> adjacent; //邻接表，表示这个点的所有邻接点
+public:
+	Vertex(const T& val, int w = 0) : vaule(val), weight(w){}
+	T get()
+	{
+		return value;
+	}
+	void set(const T v)
+	{
+		value = v;
+	}
+	bool operator == (const Vertex<T>& v) const
+	{
+		return this->get() == v.get();
+	}
+	bool operator != (const Vertex<T>& v) const
+	{
+		return this->get() != v.get();
+	}
+	bool operator < (const Vertex<T>& v) const
+	{
+		return this->get() < v.get();
+	}
+	bool operator <= (const Vertex<T>& v) const
+	{
+		return this->get() <= v.get();
+	}
+	bool operator > (const Vertex<T>& v) const
+	{
+		return this->get() > v.get();
+	}
+	bool operator >= (const Vertex<T>& v) const
+	{
+		return this->get() >= v.get();
+	}
+	std::list<Vertex<T>> adjacentVertex()
+	{
+		return adjacent;
+	}
+};
+
+template <typename T>
+class Edge
+{
+private:
+	Vertex<T> start;
+	Vertex<T> end;
+public:
+	Edge(const Vertex<T>& s, const Vertex<T>& e) : start(s), end(e){}
+};

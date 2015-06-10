@@ -83,6 +83,7 @@
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="Bucket_Sort.cpp" />
     <ClCompile Include="Counting_Sort.cpp" />
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Heap Sort.cpp" />
     <ClCompile Include="Merge Sort.cpp" />
     <ClCompile Include="QuickFindUF.cpp" />

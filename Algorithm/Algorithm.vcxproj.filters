@@ -31,6 +31,9 @@
     <Filter Include="Header Files\Tree">
       <UniqueIdentifier>{72f97db4-1a1b-4767-b1de-91b3ca579985}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Graph">
+      <UniqueIdentifier>{b8330fbe-284e-4bb4-9fa6-fa21a684b48a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="QuickFindUF.cpp">
@@ -71,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="Separate Chaining.cpp">
       <Filter>Source Files\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files\Graph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
