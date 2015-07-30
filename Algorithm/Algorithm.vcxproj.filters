@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Dynamic Connectivity">
-      <UniqueIdentifier>{72562029-a1ab-4b1a-8b01-b6d254517137}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Dynamic Connectivity">
-      <UniqueIdentifier>{f909644a-bf08-4c78-9701-8062c1d9ffa1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Sort">
       <UniqueIdentifier>{95f11b8e-e463-4c44-8863-967dc21152d2}</UniqueIdentifier>
     </Filter>
@@ -34,10 +28,13 @@
     <Filter Include="Source Files\Graph">
       <UniqueIdentifier>{b8330fbe-284e-4bb4-9fa6-fa21a684b48a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Disjoint Set">
+      <UniqueIdentifier>{72562029-a1ab-4b1a-8b01-b6d254517137}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="QuickFindUF.cpp">
-      <Filter>Source Files\Dynamic Connectivity</Filter>
+      <Filter>Source Files\Disjoint Set</Filter>
     </ClCompile>
     <ClCompile Include="Heap Sort.cpp">
       <Filter>Source Files\Sort</Filter>
@@ -86,9 +83,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="QuickFindUF.h">
-      <Filter>Header Files\Dynamic Connectivity</Filter>
-    </ClInclude>
     <ClInclude Include="Tree.h">
       <Filter>Header Files\Tree</Filter>
     </ClInclude>

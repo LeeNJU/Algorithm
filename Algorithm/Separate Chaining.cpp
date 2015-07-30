@@ -75,7 +75,7 @@ private:
 	{
 		int hashVal = hash(x);
 
-		hashVal %= theLists.size();
+		hashVal %= theLists.size();//因为hash计算的时候允许溢出，所以要检查是否为负值
 		if (hashVal < 0)
 			hashVal += theLists.size();
 
@@ -107,7 +107,7 @@ public:
 			return false;
 		whichList.push_back(x);
 
-		if (++currentSize > theLists.size())//如果元素个数超过散列表的大小，再散列
+		if (++currentSize > theLists.size() / 2)//如果元素个数超过散列表的一半，再散列
 			rehash();
 
 		return true;

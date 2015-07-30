@@ -96,7 +96,6 @@
     <ClCompile Include="Trie_Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="QuickFindUF.h" />
     <ClInclude Include="Tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
