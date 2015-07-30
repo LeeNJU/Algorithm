@@ -85,7 +85,9 @@
     <ClCompile Include="Counting_Sort.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Heap Sort.cpp" />
+    <ClCompile Include="Linear Probing.cpp" />
     <ClCompile Include="Merge Sort.cpp" />
+    <ClCompile Include="Quadratic Probing.cpp" />
     <ClCompile Include="QuickFindUF.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="RedBlackTree.cpp" />
