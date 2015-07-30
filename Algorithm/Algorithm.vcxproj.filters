@@ -81,6 +81,9 @@
     <ClCompile Include="Linear Probing.cpp">
       <Filter>Source Files\HashTable</Filter>
     </ClCompile>
+    <ClCompile Include="QuickUnionUF.cpp">
+      <Filter>Source Files\Disjoint Set</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tree.h">

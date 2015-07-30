@@ -90,6 +90,7 @@
     <ClCompile Include="Quadratic Probing.cpp" />
     <ClCompile Include="QuickFindUF.cpp" />
     <ClCompile Include="QuickSort.cpp" />
+    <ClCompile Include="QuickUnionUF.cpp" />
     <ClCompile Include="RedBlackTree.cpp" />
     <ClCompile Include="Separate Chaining.cpp" />
     <ClCompile Include="Test.cpp" />
