@@ -80,3 +80,52 @@ public:
 		}
 	}
 };
+
+//Path Compression: 在root函数中，使得每个节点指向他的爷爷节点，从而是树得到压缩
+class WeightedQuickUnionUFWithCompression
+{
+private:
+	std::vector<int> parent;
+	std::vector<int> size;  //size[i]表示以i为根节点的树中节点数量
+	int root(int i)  //求出元素i所在的树的根节点
+	{
+		while (i != parent[i])
+		{
+			parent[i] = parent[parent[i]]; //节点指向爷爷节点
+			i = parent[i];
+		}
+		return i;
+	}
+public:
+	WeightedQuickUnionUFWithCompression(int N)
+	{
+		for (int i = 0; i < N; i++) //初始化
+		{
+			parent.push_back(i);
+			size[i] = 1;
+		}
+	}
+
+	bool connected(int p, int q) //通过比较p和q的根节点是否相同来判断p和q是否在同一个子集（树）中
+	{
+		return root(p) == root(q);
+	}
+
+	void unions(int p, int q) //先求出p和q的子集（树）的根节点，把p的根节点的父节点改为q的根节点
+	{
+		int i = root(p);
+		int j = root(q);
+		if (i == j)
+			return;
+		if (size[i] < size[j])
+		{
+			parent[i] = j;
+			size[j] += size[i];
+		}
+		else
+		{
+			parent[j] = i;
+			size[i] += size[j];
+		}
+	}
+};

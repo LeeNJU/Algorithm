@@ -17,7 +17,7 @@ private:
 		return array[currentPos].info == ACTIVE;
 	}
 
-	int findPos(const HashedObj & x) const
+	int findPos(const T & x) const
 	{
 		int offset = 1;
 		int currentPos = myhash(x);
@@ -51,7 +51,7 @@ private:
 		if (oldArray[i].info == ACTIVE)
 			insert(oldArray[i].element);
 	}
-	int myhash(const HashedObj & x) const
+	int myhash(const T & x) const
 	{
 		int hashVal = hash(x);
 
@@ -67,7 +67,7 @@ public:
 		makeEmpty();
 	}
 
-	bool contains(const HashedObj & x) const
+	bool contains(const T & x) const
 	{
 		return isActive(findPos(x));
 	}
@@ -79,7 +79,7 @@ public:
 			array[i].info = EMPTY;
 	}
 
-	bool insert(const HashedObj & x)
+	bool insert(const T & x)
 	{
 		// Insert x as active
 		int currentPos = findPos(x);
@@ -95,7 +95,7 @@ public:
 		return true;
 	}
 
-	bool remove(const HashedObj & x)
+	bool remove(const T & x)
 	{
 		int currentPos = findPos(x);
 		if (!isActive(currentPos))
