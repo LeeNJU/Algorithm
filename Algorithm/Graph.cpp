@@ -41,4 +41,37 @@ public:
 
 
 	}
+
+
+	//深搜的递归实现
+	/*
+	procedure dfs(G, u) :
+	while u has an unvisited neighbor in G
+	v : = an unvisited neighbor of u
+		mark v visited
+		dfs(G, v)
+	*/
+
+	//深搜非递归实现，利用栈
+	/*
+	procedure dfs(G, s):
+	S := stack containing only s
+	while S not empty
+	v := S.pop()
+	if v not visited:
+	mark v visited
+	for w 2 G.neighbors(v): S.push(w)
+	*/
+
+	//广搜实现
+	/*
+	procedure bfs(G, s):
+	Q := queue containing only s
+	while Q not empty
+	v := Q.front(); Q.remove front()
+	for w 2 G.neighbors(v):
+	if w not seen:
+	mark w seen
+	Q.enqueue(w)
+	*/
 };

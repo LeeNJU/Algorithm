@@ -60,7 +60,7 @@ public:
 		}
 
 		if (prev == nullptr)//空树直接插入
-			root = node
+			root = node;
 		else if (prev->val < node->val)//判断该插入左子节点还是右子节点
 		    prev->right = node;
 		else
